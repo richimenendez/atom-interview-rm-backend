@@ -16,18 +16,14 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
-          cache-dependency-path: Backend/package-lock.json
 
       - name: Install dependencies
-        working-directory: ./Backend
         run: npm ci
 
       - name: Run tests
-        working-directory: ./Backend
         run: npm run test:ci
 
       - name: Build project
-        working-directory: ./Backend
         run: npm run build
 
       - name: Deploy to Firebase Functions
